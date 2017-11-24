@@ -59,8 +59,8 @@ def process_access_logs(access_logs):
         # Calculate the error percentage('404 status'/'200 status')
         percent = round(float(log[2])/float(log[1]) * 100, 2)
         if percent >= 1:
-            replace = {'log': log_date.strftime('%B %d, %Y'), 'count': percent}
             log_date = datetime.strptime(log[0], '%Y-%m-%d')
+            replace = {'log': log_date.strftime('%B %d, %Y'), 'count': percent}
             log_data += '\t%(log)s -- %(count).2f%% errors\n' % replace
     return log_data
 
