@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from log_tooldb import get_articles, get_authors, get_access_logs
 from datetime import datetime
 import os
@@ -64,4 +65,6 @@ def process_access_logs(access_logs):
             log_data += '\t%(log)s -- %(count).2f%% errors\n' % replace
     return log_data
 
-prep_log()
+
+if __name__ == '__main__':
+    prep_log()

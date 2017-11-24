@@ -1,14 +1,21 @@
 import psycopg2
 
-# Set database name
-DBNAME = "news"
+# Sets up database connection
+
+
+def connect(dbname="news"):
+    try:
+        db = psycopg2.connect(dbname=dbname)
+        c = db.cursor()
+        return db, c
+    except:
+        print('Failed to connect to the database server.')
 
 # Retrieve articles ordered by most views
 
 
 def get_articles():
-    db = psycopg2.connect(dbname=DBNAME)
-    c = db.cursor()
+    db, c = connect()
     query = "select art.title, count(*) as article_views "
     query += "from public.authors as aut, public.articles as art, public.log as l "  # noqa
     query += "where aut.id = art.author and l.path like '/article/%'||art.slug "  # noqa
@@ -23,8 +30,7 @@ def get_articles():
 
 
 def get_authors():
-    db = psycopg2.connect(dbname=DBNAME)
-    c = db.cursor()
+    db, c = connect()
     query = "select aut.name, count(*) as article_views "
     query += "from public.authors as aut, public.articles as art, public.log as l "  # noqa
     query += "where aut.id = art.author and l.path like '/article/%'||art.slug "  # noqa
@@ -38,8 +44,7 @@ def get_authors():
 
 
 def get_access_logs():
-    db = psycopg2.connect(dbname=DBNAME)
-    c = db.cursor()
+    db, c = connect()
     query = "SELECT OK.date, OK.num, ERROR.num FROM "
     query += "(SELECT to_char(date(time), 'YYYY-MM-DD') as date, count(*) as num "  # noqa
     query += "FROM public.log "
