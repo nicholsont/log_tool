@@ -47,7 +47,8 @@ def get_authors():
 
 def get_access_logs():
     db, c = connect()
-    query = """SELECT TOTAL.date, TOTAL.num, ERROR.num, (ERROR.num::decimal/TOTAL.num::decimal) * 100 AS average FROM  # noqa
+    query = """SELECT TOTAL.date, TOTAL.num, ERROR.num, 
+    (ERROR.num::decimal/TOTAL.num::decimal) * 100 AS average FROM
     (SELECT to_char(date(time), 'YYYY-MM-DD') date, count(*) num
     FROM log
     GROUP BY date
