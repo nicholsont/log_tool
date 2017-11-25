@@ -1,13 +1,13 @@
 ***Top 3 most viewed articles***
-	"Candidate Is Jerk, Alleges Rival" -- 338647 views
-	"Bears Love Berries, Alleges Bear" -- 253801 views
-	"Bad Things Gone, Say Good People" -- 170098 views
+	"Candidate is jerk, alleges rival"       338647 views
+	"Bears love berries, alleges bear"       253801 views
+	"Bad things gone, say good people"       170098 views
 
 ***Authors by most article views***
-	Ursula La Multa -- 507594 views
-	Rudolf von Treppenwitz -- 423457 views
-	Anonymous Contributor -- 170098 views
-	Markoff Chaney -- 84557 views
+	Ursula La Multa                          507594 views
+	Rudolf von Treppenwitz                   423457 views
+	Anonymous Contributor                    170098 views
+	Markoff Chaney                            84557 views
 
 ***Request errors that exceed 1%***
-	July 17, 2016 -- 2.32% errors
+	July 17, 2016                            2.26% errors
