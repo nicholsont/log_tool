@@ -29,9 +29,9 @@ def prep_log():
 def process_articles(articles):
     '''
     :Process logs for top 3 viewed articles
-    :param articles: (list) a list of two element tuples containing title and view count of the top 3 viewed articles
-    :return log_data: (string) a string containing a ready print list of the top 3 articles
-    '''
+    :param articles: (list) a list of two element tuples containing title and view count of the top 3 viewed articles  # noqa
+    :return log_data: (string) a string containing a ready print list of the top 3 articles  # noqa
+    '''  # noqa
     log_data = ''
     log_data += '***Top 3 most viewed articles***\n'
     for title, view in articles:
@@ -42,8 +42,8 @@ def process_articles(articles):
 def process_authors(authors):
     '''
     :Process logs for authors ordered by most article views
-    :param authors: (list) a list of two element tuples containing title and view count of authors by article views
-    :return log_data: (string) a string containing a ready print list of most popular authors by article views
+    :param authors: (list) a list of two element tuples containing title and view count of authors by article views  # noqa
+    :return log_data: (string) a string containing a ready print list of most popular authors by article views  # noqa
     '''
     log_data = ''
     log_data += '\n***Authors by most article views***\n'
@@ -56,8 +56,8 @@ def process_access_logs(access_logs):
     '''
     :Process logs for access errors exceeding 1%
     :param access_logs: (list) a list of four elements containing log's date, total view count, error count,
-    and error percentage
-    :return log_data: (string) a string containing a ready print list of dates where error exceeded 1% of total views
+    and error percentage  # noqa
+    :return log_data: (string) a string containing a ready print list of dates where error exceeded 1% of total views  # noqa
     '''
     log_data = ''
     log_data += '\n***Request errors that exceed 1%***\n'
@@ -66,7 +66,7 @@ def process_access_logs(access_logs):
         # Filters error percentages over 1%
         if percent >= 1:
             log_date = datetime.strptime(date, '%Y-%m-%d')
-            log_data += '\t{0:<30} {1:>14}% errors\n'.format(log_date.strftime('%B %d, %Y'), percent)
+            log_data += '\t{0:<30} {1:>14}% errors\n'.format(log_date.strftime('%B %d, %Y'), percent)  # noqa
     return log_data
 
 
